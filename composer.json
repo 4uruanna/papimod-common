@@ -1,0 +1,30 @@
+{
+    "name": "papimod/common",
+    "description": "Module Papi",
+    "type": "library",
+    "license": "Apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "Papimod\\Routing\\": "source/",
+            "Papimod\\Routing\\Test\\": "test/"
+        }
+    },
+    "authors": [
+        {
+            "name": "4uruanna",
+            "email": "adrien@villalonga.software"
+        }
+    ],
+    "scripts": {
+        "lint": "./vendor/bin/phpcbf || true && ./vendor/bin/phpcs",
+        "test": "./vendor/bin/phpunit"
+    },
+    "require": {
+        "papi/papi": "2.0.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^4.0.1",
+        "phpunit/phpunit": "^12.5.2",
+        "papimod/dotenv": "^2.0"
+    }
+}
