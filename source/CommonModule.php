@@ -34,18 +34,14 @@ final class CommonModule extends PapiModule
      */
     public static function configure(): void
     {
-        if (defined("PAPI_ALLOW_ROUTING")) {
-            if (defined("PAPI_ALLOW_ROUTING") === false) {
-                $disabled = (int) ($_ENV["ALLOW_ROUTING"] ?? 1);
-                define("PAPI_ALLOW_ROUTING", $disabled);
-            }
+        if (defined("PAPI_ALLOW_ROUTING") === false) {
+            $disabled = (int) ($_ENV["ALLOW_ROUTING"] ?? 1);
+            define("PAPI_ALLOW_ROUTING", $disabled);
         }
 
-        if (defined("PAPI_ALLOW_BODY_PARSING")) {
-            if (defined("PAPI_ALLOW_BODY_PARSING") === false) {
-                $disabled = (int) ($_ENV["ALLOW_BODY_PARSING"] ?? 1);
-                define("PAPI_ALLOW_BODY_PARSING", $disabled);
-            }
+        if (defined("PAPI_ALLOW_BODY_PARSING") === false) {
+            $disabled = (int) ($_ENV["ALLOW_BODY_PARSING"] ?? 1);
+            define("PAPI_ALLOW_BODY_PARSING", $disabled);
         }
     }
 }
