@@ -16,10 +16,17 @@ final class CommonModule extends PapiModule
 
     public static function getMiddlewares(): array
     {
-        return [
-            RoutingMiddleware::class,
-            BodyParsingMiddleware::class
-        ];
+        $middlewares = [];
+
+        if (PAPI_ALLOW_BODY_PARSING) {
+            $middlewares[] = BodyParsingMiddleware::class;
+        }
+
+        if (PAPI_ALLOW_ROUTING) {
+            $middlewares[] = RoutingMiddleware::class;
+        }
+
+        return $middlewares;
     }
 
     /**
