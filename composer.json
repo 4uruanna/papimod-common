@@ -20,7 +20,7 @@
         "test": "./vendor/bin/phpunit"
     },
     "require": {
-        "papi/papi": "2.0.0"
+        "papi/papi": "^2.0.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^4.0.1",
