@@ -1,0 +1,44 @@
+<?php
+
+namespace Papimod\Routing;
+
+use Papi\PapiModule;
+use Papimod\Dotenv\DotEnvModule;
+use Papimod\Routing\middleware\BodyParsingMiddleware;
+use Papimod\Routing\middleware\RoutingMiddleware;
+
+final class CommonModule extends PapiModule
+{
+    public static function getPrerequisites(): array
+    {
+        return [DotEnvModule::class];
+    }
+
+    public static function getMiddlewares(): array
+    {
+        return [
+            RoutingMiddleware::class,
+            BodyParsingMiddleware::class
+        ];
+    }
+
+    /**
+     * Configure the module
+     */
+    public static function configure(): void
+    {
+        if (defined("PAPI_ALLOW_ROUTING")) {
+            if (defined("PAPI_ALLOW_ROUTING") === false) {
+                $disabled = (int) ($_ENV["ALLOW_ROUTING"] ?? 1);
+                define("PAPI_ALLOW_ROUTING", $disabled);
+            }
+        }
+
+        if (defined("PAPI_ALLOW_BODY_PARSING")) {
+            if (defined("PAPI_ALLOW_BODY_PARSING") === false) {
+                $disabled = (int) ($_ENV["ALLOW_BODY_PARSING"] ?? 1);
+                define("PAPI_ALLOW_BODY_PARSING", $disabled);
+            }
+        }
+    }
+}
