@@ -1,11 +1,11 @@
 <?php
 
-namespace Papimod\Routing;
+namespace Papimod\Common;
 
 use Papi\PapiModule;
 use Papimod\Dotenv\DotEnvModule;
-use Papimod\Routing\middleware\BodyParsingMiddleware;
-use Papimod\Routing\middleware\RoutingMiddleware;
+use Papimod\Common\middleware\BodyParsingMiddleware;
+use Papimod\Common\middleware\RoutingMiddleware;
 
 final class CommonModule extends PapiModule
 {

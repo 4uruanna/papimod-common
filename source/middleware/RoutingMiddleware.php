@@ -1,6 +1,6 @@
 <?php
 
-namespace Papimod\Routing\middleware;
+namespace Papimod\Common\middleware;
 
 use Papi\interface\PapiMiddleware;
 use Psr\Http\Message\ServerRequestInterface;

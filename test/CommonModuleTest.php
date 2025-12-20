@@ -7,7 +7,7 @@ use Papi\PapiBuilder;
 use Papi\Test\mock\FooGet;
 use Papi\Test\PapiTestCase;
 use Papimod\Dotenv\DotEnvModule;
-use Papimod\Routing\CommonModule;
+use Papimod\Common\CommonModule;
 use PHPUnit\Framework\Attributes\CoversClass;
 
 #[CoversClass(CommonModule::class)]
